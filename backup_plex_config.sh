@@ -36,6 +36,7 @@ echo -e "$(date '+%Y-%b-%d at %k:%M:%S') :: Starting Plex Media Server." | tee -
 sudo service plexmediaserver start | tee -a $log 2>&1
 
 #Push backup to B2
+echo -e "$(date '+%Y-%b-%d at %k:%M:%S') :: Pushing backup to B2." | tee -a $log 2>&1
 ./b2-linux authorize-account ${ACCOUNT_ID} ${ACCOUNT_KEY}
 ./b2-linux upload-file TomConfigBackups "$backupDirectory/plex-backup.tar.gz" plex/plex-backup.tar.gz
 
