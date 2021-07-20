@@ -9,7 +9,8 @@ services:
       - PGID=1000
       - VERSION=docker
     volumes:
-      - /mnt/share/MEDIA/:/mnt/media 
+      - /mnt/share/MEDIA/:/media 
+      - /mnt/share/CloudData/Media/Music/:/media/Music
       - config:/config
     restart: unless-stopped
 volumes:
